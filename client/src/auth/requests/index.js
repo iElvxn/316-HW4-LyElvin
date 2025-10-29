@@ -12,7 +12,6 @@
 
 const BASE_URL = 'http://localhost:4000/auth'
 
-// Helper function to handle fetch requests with consistent configuration
 const fetchRequest = async (endpoint, options = {}) => {
     const config = {
         credentials: 'include', // same as axios.defaults.withCredentials = true
