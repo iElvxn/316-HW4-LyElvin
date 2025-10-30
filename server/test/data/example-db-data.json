@@ -18,6 +18,17 @@
             "playlists": [
                 "68f526c4ec1ea2ad00a6fae8"
             ]
+        },
+        {
+            "firstName": "Elvin",
+            "lastName": "Ly",
+            "email": "elvin.ly@stonybrook.edu",
+            "passwordHash": "$2a$10$dPEwsAVi1ojv2RfxxTpZjuKSAbep7zEKb5myegm.ATbQ4sJk4agGu",
+            "playlists": [
+                "68f526c4ec1ea2ad00a6faf0",
+                "68f526c4ec1ea2ad00a6faf1",
+                "68f526c4ec1ea2ad00a6faf2"
+            ]
         }
     ],
     "playlists": [
@@ -207,6 +218,453 @@
                     "artist": "The Clash",
                     "year": 1979,
                     "youTubeId": "uEK9oK02D1M"
+                }
+            ]
+        },
+        {
+            "_id": "68f526c4ec1ea2ad00a6faf0",
+            "ownerEmail": "elvin.ly@stonybrook.edu",
+            "name": "Old Songs",
+            "songs": [
+                {
+                    "title": "Across the Universe",
+                    "artist": "The Beatles",
+                    "year": 1969,
+                    "youTubeId": "90M60PzmxEE"
+                },
+                {
+                    "title": "Astronomy Domine",
+                    "artist": "Pink Floyd",
+                    "year": 1967,
+                    "youTubeId": "8UbNbor3OqQ"
+                },
+                {
+                    "title": "Bohemian Rhapsody",
+                    "artist": "Queen",
+                    "year": 1975,
+                    "youTubeId": "fJ9rUzIMcZQ"
+                },
+                {
+                    "title": "Hotel California",
+                    "artist": "Eagles",
+                    "year": 1976,
+                    "youTubeId": "BciS5krYL80"
+                },
+                {
+                    "title": "Sweet Child O' Mine",
+                    "artist": "Guns N' Roses",
+                    "year": 1987,
+                    "youTubeId": "1w7OgIMMRc4"
+                },
+                {
+                    "title": "Smells Like Teen Spirit",
+                    "artist": "Nirvana",
+                    "year": 1991,
+                    "youTubeId": "hTWKbfoikeg"
+                },
+                {
+                    "title": "Wonderwall",
+                    "artist": "Oasis",
+                    "year": 1995,
+                    "youTubeId": "6hzrDeceEKc"
+                },
+                {
+                    "title": "Torn",
+                    "artist": "Natalie Imbruglia",
+                    "year": 1997,
+                    "youTubeId": "VV1XWJN3nJo"
+                },
+                {
+                    "title": "I Want It That Way",
+                    "artist": "Backstreet Boys",
+                    "year": 1999,
+                    "youTubeId": "4fndeDfaWCg"
+                },
+                {
+                    "title": "It's My Life",
+                    "artist": "Bon Jovi",
+                    "year": 2000,
+                    "youTubeId": "vx2u5uUu3DE"
+                },
+                {
+                    "title": "Hey Ya!",
+                    "artist": "OutKast",
+                    "year": 2003,
+                    "youTubeId": "PWgvGjAhvIw"
+                },
+                {
+                    "title": "Crazy",
+                    "artist": "Gnarls Barkley",
+                    "year": 2006,
+                    "youTubeId": "bd2B6SjMh_w"
+                },
+                {
+                    "title": "Poker Face",
+                    "artist": "Lady Gaga",
+                    "year": 2008,
+                    "youTubeId": "bESGLojNYSo"
+                },
+                {
+                    "title": "Rolling in the Deep",
+                    "artist": "Adele",
+                    "year": 2010,
+                    "youTubeId": "rYEDA3JcQqw"
+                },
+                {
+                    "title": "Somebody That I Used to Know",
+                    "artist": "Gotye ft. Kimbra",
+                    "year": 2011,
+                    "youTubeId": "8UVNT4wvIGY"
+                },
+                {
+                    "title": "Get Lucky",
+                    "artist": "Daft Punk ft. Pharrell Williams",
+                    "year": 2013,
+                    "youTubeId": "5NV6Rdv1a3I"
+                },
+                {
+                    "title": "Uptown Funk",
+                    "artist": "Mark Ronson ft. Bruno Mars",
+                    "year": 2014,
+                    "youTubeId": "OPf0YbXqDm0"
+                },
+                {
+                    "title": "Shape of You",
+                    "artist": "Ed Sheeran",
+                    "year": 2017,
+                    "youTubeId": "JGwWNGJdvx8"
+                },
+                {
+                    "title": "Old Town Road",
+                    "artist": "Lil Nas X ft. Billy Ray Cyrus",
+                    "year": 2019,
+                    "youTubeId": "7ysFgElQtjI"
+                },
+                {
+                    "title": "Stairway to Heaven",
+                    "artist": "Led Zeppelin",
+                    "year": 1971,
+                    "youTubeId": "QkF3oxziUI4"
+                },
+                {
+                    "title": "Don't Stop Believin'",
+                    "artist": "Journey",
+                    "year": 1981,
+                    "youTubeId": "VcjzHMhBtf0"
+                },
+                {
+                    "title": "Billie Jean",
+                    "artist": "Michael Jackson",
+                    "year": 1982,
+                    "youTubeId": "Zi_XLOBDo_Y"
+                },
+                {
+                    "title": "Like a Prayer",
+                    "artist": "Madonna",
+                    "year": 1989,
+                    "youTubeId": "79fzeNUqQbQ"
+                },
+                {
+                    "title": "Black",
+                    "artist": "Pearl Jam",
+                    "year": 1991,
+                    "youTubeId": "4q9UafsiQ6k"
+                },
+                {
+                    "title": "Creep",
+                    "artist": "Radiohead",
+                    "year": 1992,
+                    "youTubeId": "XFkzRNyygfk"
+                },
+                {
+                    "title": "Zombie",
+                    "artist": "The Cranberries",
+                    "year": 1994,
+                    "youTubeId": "6Ejga4kJUts"
+                }
+            ]
+        },
+        {
+            "_id": "68f526c4ec1ea2ad00a6faf1",
+            "ownerEmail": "elvin.ly@stonybrook.edu",
+            "name": "Favorite Songs",
+            "songs": [
+                {
+                    "title": "505",
+                    "artist": "Arctic Monkeys",
+                    "year": 2007,
+                    "youTubeId": "qU9mHegkTc4"
+                },
+                {
+                    "title": "Honest",
+                    "artist": "Baby Keem",
+                    "year": 2021,
+                    "youTubeId": "3YlT7pL1u0Y"
+                },
+                {
+                    "title": "Flash",
+                    "artist": "2hollis",
+                    "year": 2022,
+                    "youTubeId": "example1"
+                },
+                {
+                    "title": "Crush",
+                    "artist": "Tessa Violet",
+                    "year": 2018,
+                    "youTubeId": "2M3QO1V8HhA"
+                },
+                {
+                    "title": "Gold",
+                    "artist": "BROCKHAMPTON",
+                    "year": 2017,
+                    "youTubeId": "hi4pzKvuEQM"
+                },
+                {
+                    "title": "Talk",
+                    "artist": "Beabadoobee",
+                    "year": 2020,
+                    "youTubeId": "3lDqMx4rmFU"
+                },
+                {
+                    "title": "LVL",
+                    "artist": "A$AP Rocky",
+                    "year": 2013,
+                    "youTubeId": "5Rj4N3Xl9rA"
+                },
+                {
+                    "title": "No.1 Party Anthem",
+                    "artist": "Arctic Monkeys",
+                    "year": 2013,
+                    "youTubeId": "VQH8ZTgna3Q"
+                },
+                {
+                    "title": "Louise",
+                    "artist": "TV Girl",
+                    "year": 2014,
+                    "youTubeId": "2rT1CHPz60E"
+                },
+                {
+                    "title": "Sienna",
+                    "artist": "The Marías",
+                    "year": 2024,
+                    "youTubeId": "4N1iwQxiHrs"
+                },
+                {
+                    "title": "Say",
+                    "artist": "Keshi",
+                    "year": 2020,
+                    "youTubeId": "2rT1CHPz60E"
+                },
+                {
+                    "title": "Beaches",
+                    "artist": "beabadoobee",
+                    "year": 2022,
+                    "youTubeId": "hi4pzKvuEQM"
+                },
+                {
+                    "title": "California",
+                    "artist": "beabadoobee",
+                    "year": 2020,
+                    "youTubeId": "6bZxNw3W6aE"
+                },
+                {
+                    "title": "Fluorescent Adolescent",
+                    "artist": "Arctic Monkeys",
+                    "year": 2007,
+                    "youTubeId": "ma9I9VBKPiw"
+                },
+                {
+                    "title": "Some",
+                    "artist": "Steve Lacy",
+                    "year": 2019,
+                    "youTubeId": "VQH8ZTgna3Q"
+                },
+                {
+                    "title": "3 Nights",
+                    "artist": "Dominic Fike",
+                    "year": 2018,
+                    "youTubeId": "QZsF7IRTgMQ"
+                },
+                {
+                    "title": "Lady of Namek",
+                    "artist": "Tory Lanez",
+                    "year": 2021,
+                    "youTubeId": "4N1iwQxiHrs"
+                },
+                {
+                    "title": "Steeeam",
+                    "artist": "Shelly",
+                    "year": 2020,
+                    "youTubeId": "2rT1CHPz60E"
+                },
+                {
+                    "title": "Hurt",
+                    "artist": "NewJeans",
+                    "year": 2022,
+                    "youTubeId": "hi4pzKvuEQM"
+                },
+                {
+                    "title": "Light",
+                    "artist": "Wave to Earth",
+                    "year": 2022,
+                    "youTubeId": "6bZxNw3W6aE"
+                }
+            ]
+        },
+        {
+            "_id": "68f526c4ec1ea2ad00a6faf2",
+            "ownerEmail": "elvin.ly@stonybrook.edu",
+            "name": "Hidden Gems",
+            "songs": [
+                {
+                    "title": "Breezeblocks",
+                    "artist": "alt-J",
+                    "year": 2012,
+                    "youTubeId": "rVeMiVUBywo"
+                },
+                {
+                    "title": "Oblivion",
+                    "artist": "Grimes",
+                    "year": 2012,
+                    "youTubeId": "JtH68PZIQKk"
+                },
+                {
+                    "title": "The Less I Know The Better",
+                    "artist": "Tame Impala",
+                    "year": 2015,
+                    "youTubeId": "sEXHeTcxQy4"
+                },
+                {
+                    "title": "Space Song",
+                    "artist": "Beach House",
+                    "year": 2015,
+                    "youTubeId": "L-7cOc7y2nE"
+                },
+                {
+                    "title": "Ribs",
+                    "artist": "Lorde",
+                    "year": 2013,
+                    "youTubeId": "j2r2nDhTrtI"
+                },
+                {
+                    "title": "The Night We Met",
+                    "artist": "Lord Huron",
+                    "year": 2015,
+                    "youTubeId": "KtlgYxa6BMU"
+                },
+                {
+                    "title": "Cherry Wine",
+                    "artist": "Hozier",
+                    "year": 2014,
+                    "youTubeId": "Hj8setfq1dE"
+                },
+                {
+                    "title": "Holocene",
+                    "artist": "Bon Iver",
+                    "year": 2011,
+                    "youTubeId": "TWcyIpul8EY"
+                },
+                {
+                    "title": "Skinny Love",
+                    "artist": "Bon Iver",
+                    "year": 2007,
+                    "youTubeId": "8j9zMok73-g"
+                },
+                {
+                    "title": "The Suburbs",
+                    "artist": "Arcade Fire",
+                    "year": 2010,
+                    "youTubeId": "5Euj9f3gdyM"
+                },
+                {
+                    "title": "Midnight City",
+                    "artist": "M83",
+                    "year": 2011,
+                    "youTubeId": "dX3k_QDnzHE"
+                },
+                {
+                    "title": "Retrograde",
+                    "artist": "James Blake",
+                    "year": 2013,
+                    "youTubeId": "6y7QqCWhoJM"
+                },
+                {
+                    "title": "Loud Places",
+                    "artist": "Jamie xx ft. Romy",
+                    "year": 2015,
+                    "youTubeId": "QrR_gm6RqCo"
+                },
+                {
+                    "title": "The Chain",
+                    "artist": "Fleetwood Mac",
+                    "year": 1977,
+                    "youTubeId": "WgPe1x1x5U0"
+                },
+                {
+                    "title": "Dreams",
+                    "artist": "Fleetwood Mac",
+                    "year": 1977,
+                    "youTubeId": "Y3ywicffOj4"
+                },
+                {
+                    "title": "Landslide",
+                    "artist": "Fleetwood Mac",
+                    "year": 1975,
+                    "youTubeId": "WM7-PYtXtJM"
+                },
+                {
+                    "title": "The Sound of Silence",
+                    "artist": "Simon & Garfunkel",
+                    "year": 1964,
+                    "youTubeId": "4fWyzwo1xg"
+                },
+                {
+                    "title": "Bridge Over Troubled Water",
+                    "artist": "Simon & Garfunkel",
+                    "year": 1970,
+                    "youTubeId": "4A_JOCWv5d8"
+                },
+                {
+                    "title": "The Boxer",
+                    "artist": "Simon & Garfunkel",
+                    "year": 1969,
+                    "youTubeId": "l3LFML_pxlY"
+                },
+                {
+                    "title": "Mrs. Robinson",
+                    "artist": "Simon & Garfunkel",
+                    "year": 1968,
+                    "youTubeId": "9C1BCAguwbI"
+                },
+                {
+                    "title": "Scarborough Fair",
+                    "artist": "Simon & Garfunkel",
+                    "year": 1966,
+                    "youTubeId": "-BakWVXHSug"
+                },
+                {
+                    "title": "Homeward Bound",
+                    "artist": "Simon & Garfunkel",
+                    "year": 1966,
+                    "youTubeId": "U6tV11acSRk"
+                },
+                {
+                    "title": "I Am a Rock",
+                    "artist": "Simon & Garfunkel",
+                    "year": 1966,
+                    "youTubeId": "QjA5faZF1A8"
+                },
+                {
+                    "title": "America",
+                    "artist": "Simon & Garfunkel",
+                    "year": 1968,
+                    "youTubeId": "N4d7Wp9kKj4"
+                },
+                {
+                    "title": "Cecilia",
+                    "artist": "Simon & Garfunkel",
+                    "year": 1970,
+                    "youTubeId": "BO5QY8X5qGs"
                 }
             ]
         }
