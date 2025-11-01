@@ -38,6 +38,10 @@ class DatabaseManager {
     async getPlaylistById(playlistID) {
 
     }
+
+    async updatePlaylist(playlistID) {
+        
+    }
 }
 
 module.exports = DatabaseManager;

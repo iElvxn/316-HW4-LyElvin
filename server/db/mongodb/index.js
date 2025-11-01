@@ -167,7 +167,38 @@ class MongoDBManager extends DatabaseManager {
             throw err
         }
     }
-}
 
+    async updatePlaylist(playlistID, userID, updateData) {
+        try {
+            const playlist = await Playlist.findOne({ _id: playlistID })
+            console.log("playlist found: " + JSON.stringify(playlist));
+
+
+            // DOES THIS LIST BELONG TO THIS USER?
+            const user = await User.findOne({ email: playlist.ownerEmail })
+            console.log("user._id: " + user._id);
+            console.log("req.userId: " + userID);
+            if (user._id == userID) {
+                console.log("correct user!");
+                console.log("updateData.name: " + updateData.name);
+
+                playlist.name = updateData.name;
+                playlist.songs = updateData.songs;
+                const updatedPlaylist = await playlist.save()
+
+                console.log("SUCCESS!!!");
+                return updatedPlaylist
+
+            }
+            else {
+                console.log("incorrect user!");
+                return { success: false, description: "authentication error" }
+            }
+        } catch (error) {
+            console.error(error)
+            throw error
+        }
+    }
+}
 const dbManager = new MongoDBManager();
 module.exports = dbManager;
