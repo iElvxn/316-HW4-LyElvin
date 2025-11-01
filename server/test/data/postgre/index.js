@@ -3,7 +3,7 @@ const dotenv = require('dotenv').config({ path: __dirname + '/../../../.env' });
 
 const sequelize = new Sequelize(process.env.POSTGRESQL_URI || 'postgres://user:password@localhost:5432/playlister');
 
-//User model
+//User
 const User = sequelize.define('User', {
     id: {
         type: DataTypes.INTEGER,
@@ -31,7 +31,7 @@ const User = sequelize.define('User', {
     timestamps: true
 });
 
-//Playlist model
+//Playlist
 const Playlist = sequelize.define('Playlist', {
     id: {
         type: DataTypes.INTEGER,
@@ -81,16 +81,17 @@ async function resetPostgre() {
 
     //drops and recreates all tables
     await sequelize.sync({ force: true });
-    console.log(collectionName + " cleared");
+    console.log("Tables cleared");
 
-    // Fill collections with test data
+    // put our test data in
     await fillCollection(User, "User", testData.users);
     await fillCollection(Playlist, "Playlist", testData.playlists);
 
     console.log("PostgreSQL reset complete!");
+    process.exit(0);
 }
 
-// Connect to database and run reset
+//connect and run the reset
 sequelize
     .authenticate()
     .then(() => { return resetPostgre() })
