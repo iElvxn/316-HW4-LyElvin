@@ -27,6 +27,10 @@ class DatabaseManager {
 
     }
 
+    async getPlaylists() {
+        
+    }
+
     async getPlaylistPairs(userID) {
 
     }

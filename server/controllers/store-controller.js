@@ -1,5 +1,3 @@
-const Playlist = require('../models/playlist-model')
-const User = require('../models/user-model');
 const auth = require('../auth')
 const DatabaseManager = require('../db/mongodb');
 /*
@@ -99,17 +97,14 @@ getPlaylists = async (req, res) => {
             errorMessage: 'UNAUTHORIZED'
         })
     }
-    await Playlist.find({}, (err, playlists) => {
-        if (err) {
-            return res.status(400).json({ success: false, error: err })
-        }
-        if (!playlists.length) {
-            return res
-                .status(404)
-                .json({ success: false, error: `Playlists not found` })
-        }
+    try {
+        playlists = await DatabaseManager.getPlaylists();
         return res.status(200).json({ success: true, data: playlists })
-    }).catch(err => console.log(err))
+    } catch (error) {
+        console.log(error)
+        throw error
+    }
+    
 }
 updatePlaylist = async (req, res) => {
     if (auth.verifyUser(req) === null) {

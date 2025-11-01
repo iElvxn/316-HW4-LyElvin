@@ -199,6 +199,14 @@ class MongoDBManager extends DatabaseManager {
             throw error
         }
     }
+
+    async getPlaylists() {
+        const playlists = await Playlist.find({})
+        if (!playlists.length) {
+            return { success: false, error: `Playlists not found` }
+        }
+        return playlists
+    }
 }
 const dbManager = new MongoDBManager();
 module.exports = dbManager;
