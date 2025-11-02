@@ -9,13 +9,13 @@ let DatabaseManager;
 let db;
 
 if (DATABASE_TYPE === 'mongodb') {
-    console.log('🔵 Loading MongoDB DatabaseManager...');
+    console.log('Loading MongoDB DatabaseManager...');
     DatabaseManager = require('./mongodb/index.js')
     DatabaseManager.connect()
 
     db = mongoose.connection
 } else if (DATABASE_TYPE == 'postgresql') {
-    console.log('🟢 Loading PostgreSQL DatabaseManager...');
+    console.log('Loading PostgreSQL DatabaseManager...');
     DatabaseManager = require('./postgresql/index.js')
     DatabaseManager.connect()
 
