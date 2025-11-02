@@ -153,9 +153,9 @@ test('Test #7) getPlaylists', async () => {
     const playlists = await DatabaseManager.getPlaylists();
 
     expect(playlists).toBeDefined();
-    expect(playlists.length).toBeGreaterThan(0); //it should have our test playlist in it
+    expect(playlists.length).toBeGreaterThan(0); 
 
-    // Check that our test playlist is in the list
+    //it should have our test playlist in it
     const foundPlaylist = playlists.find(playlist => playlist.name === testPlaylist.name);
     expect(foundPlaylist).toBeDefined();
     expect(foundPlaylist.ownerEmail).toBe(testPlaylist.ownerEmail);
@@ -165,7 +165,6 @@ test('Test #7) getPlaylists', async () => {
 test('Test #8) updatePlaylist', async () => {
     const playlistId = testPlaylist._id || testPlaylist.id;
     const userId = testUser._id || testUser.id;
-
     const updateData = {
         name: "Joe Mama",
         songs: [
@@ -188,12 +187,11 @@ test('Test #8) updatePlaylist', async () => {
     };
 
     const updatedPlaylist = await DatabaseManager.updatePlaylist(playlistId, userId, updateData);
-
     expect(updatedPlaylist).toBeDefined();
     expect(updatedPlaylist.name).toBe(updateData.name);
     expect(updatedPlaylist.songs).toEqual(updateData.songs);
 
-    testPlaylist = updatedPlaylist; //update our global to continue out tsts
+    testPlaylist = updatedPlaylist; //update our global to continue our tsts
 
 });
 
@@ -201,7 +199,7 @@ test('Test #9) deletePlaylist', async () => {
     const playlistId = testPlaylist._id || testPlaylist.id;
     const userId = testUser._id || testUser.id;
 
-    const deleted = await DatabaseManager.deletePlaylist(playlistId, userId);
+    await DatabaseManager.deletePlaylist(playlistId, userId);
 
     await expect(DatabaseManager.getPlaylistById(playlistId, userId)).rejects.toThrow();
 });
