@@ -67,8 +67,9 @@ Playlist.belongsTo(User, {
 
 async function fillCollection(collection, collectionName, data) {
     try {
-        await collection.bulkCreate(data);
+        const created = await collection.bulkCreate(data);
         console.log(collectionName + " filled");
+        return created;
     } catch (err) {
         console.log(err);
     }
@@ -83,9 +84,24 @@ async function resetPostgre() {
     await sequelize.sync({ force: true });
     console.log("Tables cleared");
 
-    // put our test data in
-    await fillCollection(User, "User", testData.users);
-    await fillCollection(Playlist, "Playlist", testData.playlists);
+    // create the users database
+    const createdUsers = await fillCollection(User, "User", testData.users);
+
+    //map email -> userId this is for the playlists -> user reference
+    const emailToUserId = {};
+    createdUsers.forEach(user => {
+        emailToUserId[user.email] = user.id;
+    });
+
+    // playlists to include userId foreign key in playlists
+    const playlistsWithUserId = testData.playlists.map(playlist => ({
+        name: playlist.name,
+        ownerEmail: playlist.ownerEmail,
+        songs: playlist.songs,
+        userId: emailToUserId[playlist.ownerEmail] 
+    }));
+
+    const createdPlaylists = await fillCollection(Playlist, "Playlist", playlistsWithUserId);
 
     console.log("PostgreSQL reset complete!");
     process.exit(0);
