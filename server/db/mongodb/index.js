@@ -50,61 +50,52 @@ class MongoDBManager extends DatabaseManager {
     }
 
     async createPlaylist(playlistData, userID) {
-        const playlist = new Playlist(playlistData);
-        console.log("playlist: " + playlist.toString());
-        if (!playlist) {
-            return null;
-        }
+        try {
+            const playlist = new Playlist(playlistData);
+            console.log("playlist: " + playlist.toString());
+            if (!playlist) {
+                return null;
+            }
 
-        this.User.findOne({ _id: userID }, (err, user) => {
+            const user = await this.User.findOne({ _id: userID })
+
             console.log("user found: " + JSON.stringify(user));
             user.playlists.push(playlist._id);
-            user
-                .save()
-                .then(() => {
-                    playlist
-                        .save()
-                        .then(() => {
-                            return playlist;
-                        })
-                        .catch(error => {
-                            return null;
-                        })
-                });
-        })
-        return playlist;
+            await user.save();
+            await playlist.save();
+            return playlist.toObject();
+        } catch (error) {
+            console.error(error)
+            throw error;
+        }
     }
 
     async deletePlaylist(playlistID, userID) {
-        Playlist.findById({ _id: playlistID }, (err, playlist) => {
+        try {
+            const playlist = await Playlist.findById(playlistID);
             console.log("playlist found: " + JSON.stringify(playlist));
-            if (err) {
-                return json({
-                    errorMessage: 'Playlist not found!',
-                })
+
+            if (!playlist) {
+                throw new Error('Playlist not found!');
             }
 
             // DOES THIS LIST BELONG TO THIS USER?
-            async function asyncFindUser(list) {
-                User.findOne({ email: list.ownerEmail }, (err, user) => {
-                    console.log("user._id: " + user._id);
-                    console.log("userID: " + userID);
-                    if (user._id == userID) {
-                        console.log("correct user!");
-                        Playlist.findOneAndDelete({ _id: playlistID }, () => {
-                            return {};
-                        }).catch(err => console.log(err))
-                    }
-                    else {
-                        console.log("incorrect user!");
-                        return json({
-                            errorMessage: "authentication error"
-                        });
-                    }
-                });
+            const user = await User.findOne({ email: playlist.ownerEmail });
+            console.log("user._id: " + user._id);
+            console.log("userID: " + userID);
+
+            if (user._id.toString() === userID.toString()) {
+                console.log("correct user!");
+                await Playlist.findOneAndDelete({ _id: playlistID });
+                return {};
+            } else {
+                console.log("incorrect user!");
+                throw new Error("authentication error");
             }
-            asyncFindUser(playlist);
-        })
+        } catch (error) {
+            console.error('Error deleting playlist:', error);
+            throw error;
+        }
     }
 
     async getPlaylistById(playlistID, userID) {
@@ -125,7 +116,7 @@ class MongoDBManager extends DatabaseManager {
 
             if (user._id.toString() === userID.toString()) {
                 console.log("correct user!");
-                return playlist;
+                return playlist.toObject();
             } else {
                 console.log("incorrect user!");
                 throw new Error('authentication error');
@@ -179,7 +170,7 @@ class MongoDBManager extends DatabaseManager {
             const user = await User.findOne({ email: playlist.ownerEmail })
             console.log("user._id: " + user._id);
             console.log("req.userId: " + userID);
-            if (user._id == userID) {
+            if (user._id.toString() == userID.toString()) {
                 console.log("correct user!");
                 console.log("updateData.name: " + updateData.name);
 
@@ -188,7 +179,7 @@ class MongoDBManager extends DatabaseManager {
                 const updatedPlaylist = await playlist.save()
 
                 console.log("SUCCESS!!!");
-                return updatedPlaylist
+                return updatedPlaylist.toObject()
 
             }
             else {
@@ -206,7 +197,7 @@ class MongoDBManager extends DatabaseManager {
         if (!playlists.length) {
             return { success: false, error: `Playlists not found` }
         }
-        return playlists
+        return playlists.map(playlist => playlist.toObject())
     }
 }
 const dbManager = new MongoDBManager();

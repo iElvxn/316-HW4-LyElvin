@@ -14,7 +14,8 @@ const playlistSchema = new Schema(
             title: String,
             artist: String,
             year: Number,
-            youTubeId: String
+            youTubeId: String,
+            _id: false
         }], required: true }
     },
     { timestamps: true },
