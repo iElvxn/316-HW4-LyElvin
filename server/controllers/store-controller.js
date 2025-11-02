@@ -1,5 +1,5 @@
 const auth = require('../auth')
-const DatabaseManager = require('../db/mongodb');
+const {DatabaseManager} = require('../db/index.js');
 /*
     This is our back-end API. It provides all the data services
     our database needs. Note that this file contains the controller

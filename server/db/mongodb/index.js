@@ -27,6 +27,7 @@ class MongoDBManager extends DatabaseManager {
             return await user.save();
         } catch (error) {
             console.error('Error creating user:', error);
+            throw error
         }
     }
 

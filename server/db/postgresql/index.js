@@ -86,6 +86,7 @@ class SequelizeManager extends DatabaseManager {
 
         } catch (error) {
             console.error('Error creating user:', error);
+            throw error
         }
     }
 
@@ -117,7 +118,10 @@ class SequelizeManager extends DatabaseManager {
             const playlist = await this.Playlist.create(playlistData);
             console.log("playlist: " + JSON.stringify(playlist));
 
-            return playlist;
+            return {
+                ...playlist.toJSON(),
+                _id: playlist.id
+            };
 
         } catch (error) {
             console.error('Error creating playlist:', error);
@@ -165,7 +169,10 @@ class SequelizeManager extends DatabaseManager {
 
             if (user.id.toString() === userID.toString()) {
                 console.log("correct user!");
-                return playlist;
+                return {
+                    ...playlist.toJSON(),
+                    _id: playlist.id
+                };
             } else {
                 console.log("incorrect user!");
                 throw new Error('authentication error');
@@ -231,7 +238,10 @@ class SequelizeManager extends DatabaseManager {
                 const updatedPlaylist = await playlist.save()
 
                 console.log("SUCCESS!!!");
-                return updatedPlaylist
+                return {
+                    ...updatedPlaylist.toJSON(),
+                    _id: updatedPlaylist.id
+                }
 
             }
             else {
@@ -249,7 +259,10 @@ class SequelizeManager extends DatabaseManager {
         if (!playlists.length) {
             return { success: false, error: `Playlists not found` }
         }
-        return playlists
+        return playlists.map(playlist => ({
+            ...playlist.toJSON(),
+            _id: playlist.id
+        }));
     }
 }
 

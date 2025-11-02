@@ -2,14 +2,31 @@
 const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 dotenv.config();
+const DATABASE_TYPE = process.env.DATABASE_TYPE;
 
-mongoose
-    .connect(process.env.DB_CONNECT, { useNewUrlParser: true })
-    .catch(e => {
-        console.error('Connection error', e.message)
-    })
 
-const db = mongoose.connection
+let DatabaseManager;
+let db;
 
-module.exports = db
+if (DATABASE_TYPE === 'mongodb') {
+    console.log('🔵 Loading MongoDB DatabaseManager...');
+    DatabaseManager = require('./mongodb/index.js')
+    DatabaseManager.connect()
 
+    db = mongoose.connection
+} else if (DATABASE_TYPE == 'postgresql') {
+    console.log('🟢 Loading PostgreSQL DatabaseManager...');
+    DatabaseManager = require('./postgresql/index.js')
+    DatabaseManager.connect()
+
+    db = {
+        on: (event, callback) => {
+            if (event === 'error') {
+                console.log('PostgreSQL error listener registered');
+            }
+        }
+    };
+}
+
+module.exports = db;
+module.exports.DatabaseManager = DatabaseManager

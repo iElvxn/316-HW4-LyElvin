@@ -1,6 +1,6 @@
 const auth = require('../auth')
 const bcrypt = require('bcryptjs')
-const DatabaseManager = require('../db/mongodb');
+const { DatabaseManager } = require('../db/index.js');
 
 getLoggedIn = async (req, res) => {
     try {
@@ -65,7 +65,7 @@ loginUser = async (req, res) => {
         }
 
         // LOGIN THE USER
-        const token = auth.signToken(existingUser._id);
+        const token = auth.signToken(existingUser._id || existingUser.id);
         console.log(token);
 
         res.cookie("token", token, {
@@ -76,8 +76,8 @@ loginUser = async (req, res) => {
             success: true,
             user: {
                 firstName: existingUser.firstName,
-                lastName: existingUser.lastName,  
-                email: existingUser.email              
+                lastName: existingUser.lastName,
+                email: existingUser.email
             }
         })
 
@@ -142,11 +142,12 @@ registerUser = async (req, res) => {
 
         //const newUser = new User({firstName, lastName, email, passwordHash});
         //const savedUser = await newUser.save();
-        const savedUser = await DatabaseManager.createUser({firstName, lastName, email, passwordHash});
-        console.log("new user saved: " + savedUser._id);
+        const savedUser = await DatabaseManager.createUser({ firstName, lastName, email, passwordHash });
+        const userId = savedUser._id || savedUser.id;
+        console.log("new user saved: " + userId);
 
         // LOGIN THE USER
-        const token = auth.signToken(savedUser._id);
+        const token = auth.signToken(userId);
         console.log("token:" + token);
 
         await res.cookie("token", token, {
@@ -157,8 +158,8 @@ registerUser = async (req, res) => {
             success: true,
             user: {
                 firstName: savedUser.firstName,
-                lastName: savedUser.lastName,  
-                email: savedUser.email              
+                lastName: savedUser.lastName,
+                email: savedUser.email
             }
         })
 
